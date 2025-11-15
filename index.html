@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Recurrencias Homogéneas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Recurrencias Lineales Homogéneas (Orden ≤ 2)</h1>
+        
+        <div class="controls-group">
+            <label>Coeficientes de la Recurrencia:</label>
+            <p class="note">Ecuación: a(n) = c₁a(n-1) + c₂a(n-2)</p> 
+            <div class="input-row">
+                <label for="c1">Coef. a(n-1):</label>
+                <input type="number" id="c1" value="5">
+            </div>
+            <div class="input-row" id="c2-input-group">
+                <label for="c2">Coef. a(n-2):</label>
+                <input type="number" id="c2" value="-6">
+            </div>
+        </div>
+
+        <div class="controls-group">
+            <label>Condiciones Iniciales:</label>
+            <div class="input-row">
+                <label for="a0">a(0):</label>
+                <input type="number" id="a0" value="2">
+            </div>
+            <div class="input-row" id="a1-input-group">
+                <label for="a1">a(1):</label>
+                <input type="number" id="a1" value="5">
+            </div>
+        </div>
+        
+        <button id="calculate-btn">Resolver a(n)</button>
+
+        <div id="result-container" class="result-container">
+            <h2>Resultado</h2>
+            <p>Ecuación: <span id="equation-display"></span></p>
+            <p>Ecuación Característica: <span id="char-eq-display"></span></p>
+            <p>Raíces: <span id="roots-display"></span></p>
+            <p>Solución General: <span id="sol-homogenea-display"></span></p>
+            <p>Solución Particular a(n): <span id="sol-final-display"></span></p>
+            <p class="error-message" id="error-display"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
