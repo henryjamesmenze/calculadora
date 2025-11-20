@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    document.getElementById("sol-homogenea-display").textContent = solGeneral;
+    document.getElementsById("sol-homogenea-display").textContent = solGeneral;
     document.getElementById("sol-final-display").textContent = solFinal;
   });
 
