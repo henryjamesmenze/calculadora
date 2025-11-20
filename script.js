@@ -146,13 +146,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         ({ C1, C2 } = solution);
 
+        console.log("C1:", C1, "C2:", C2);
+        console.log("r1:", r1, "r2:", r2);
+
         document.getElementById(
           "roots-display"
         ).textContent = `r1 ≈ ${r1.toFixed(2)}, r2 ≈ ${r2.toFixed(2)}`;
-        solGeneral = `C1(${r1.toFixed(2)})^n + C2(${r2.toFixed(2)})^n`;
-        solFinal = `${C1.toFixed(2)}(${r1.toFixed(2)})^n + ${C2.toFixed(
+
+        solGeneral = `C1(${r1.toFixed(2)})**n + C2(${r2.toFixed(2)})**n`;
+
+        solFinal = `${C1.toFixed(2)}(${r1.toFixed(2)})**n + ${C2.toFixed(
           2
-        )}(${r2.toFixed(2)})^n`;
+        )}(${r2.toFixed(2)})**n`;
       } else if (roots.type === "double") {
         const r = roots.r;
         ({ C1, C2 } = solveSystemDouble(r, a0, a1));
@@ -190,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    document.getElementsById("sol-homogenea-display").textContent = solGeneral;
+    document.getElementById("sol-homogenea-display").textContent = solGeneral;
     document.getElementById("sol-final-display").textContent = solFinal;
   });
 
